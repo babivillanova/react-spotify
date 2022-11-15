@@ -13,7 +13,7 @@ import {
 import Header from './components/Header';
 import Footer from './components/Footer';
 import UserPlaylists from './components/UserPlaylists';
-import MainView from './components/MainView';
+import MainView from './components/MainView/component';
 import ArtWork from './components/ArtWork';
 import MainHeader from './components/MainHeader';
 import SideMenu from './components/SideMenu';
@@ -91,17 +91,17 @@ class App extends Component {
       <div className="App">
         <div className="app-container">
           <div className="left-side-section">
-            <SideMenu />
-            <UserPlaylists />
-            <ArtWork />
+            {/* <SideMenu /> */}
+            {/* <UserPlaylists /> */}
+            {/* <ArtWork /> */}
           </div>
           <div className="main-section">
-            <Header />
+            {/* <Header /> */}
             <div className="main-section-container">
-              <MainHeader
+              {/* <MainHeader
                 pauseSong={this.pauseSong}
                 resumeSong={this.resumeSong}
-              />{' '}
+              />{' '} */}
               <MainView
                 pauseSong={this.pauseSong}
                 resumeSong={this.resumeSong}
@@ -109,12 +109,12 @@ class App extends Component {
               />
             </div>
           </div>
-          <Footer
+          {/* <Footer
             stopSong={this.stopSong}
             pauseSong={this.pauseSong}
             resumeSong={this.resumeSong}
             audioControl={this.audioControl}
-          />
+          /> */}
         </div>
       </div>
     );

@@ -7,24 +7,36 @@ import BrowseView from "../BrowseView";
 import "./MainView.css";
 
 const MainView = ({ headerTitle, audioControl, resumeSong, pauseSong }) => {
-  return (
-    <React.Fragment>
-      {headerTitle === "Albums" ? (
-        <AlbumList audioControl={audioControl} />
-      ) : headerTitle === "Artists" ? (
-        <ArtistList />
-      ) : headerTitle === "Browse" ? (
-        <BrowseView />
-      ) : (
-        //anything else show SongList
-        <SongList
-          resumeSong={resumeSong}
-          pauseSong={pauseSong}
-          audioControl={audioControl}
-        />
-      )}
-    </React.Fragment>
-  );
+
+  let component; 
+  switch(headerTitle){
+
+    case 'Albums': 
+      component = <AlbumList audioControl={audioControl} />;
+      break;
+    case 'Artists':
+      component = <ArtistList />;
+      break;
+    case 'Browse': 
+      component = <BrowseView />;
+      break; 
+    case 'Songs': 
+      component = (<SongList
+        resumeSong={resumeSong}
+        pauseSong={pauseSong}
+        audioControl={audioControl}
+      />);
+      break; 
+
+    default: 
+      component = (<SongList
+        resumeSong={resumeSong}
+        pauseSong={pauseSong}
+        audioControl={audioControl}
+      />);
+      break;
+  }
+  return component;
 };
 
 MainView.propTypes = {
